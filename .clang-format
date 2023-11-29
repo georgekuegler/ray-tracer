@@ -1,0 +1,5 @@
+# ---
+# Clang Format Style
+BasedOnStyle: Mozilla
+Language: Cpp
+# ---
