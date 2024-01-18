@@ -4,7 +4,7 @@
 
 /**
 
- left off at -> 5
+ left off at -> 6.5
  https://raytracing.github.io/books/RayTracingInOneWeekend.html
 
 */
