@@ -1,6 +1,7 @@
 ##############################
 ## Project Specific Ignores ##
 ##############################
+image.ppm
 *.log
 todo-notes-output.txt
 vcpkg_installed/
