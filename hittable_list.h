@@ -12,7 +12,10 @@ class hittable_list : public hittable
 public:
   std::vector<shared_ptr<hittable>> objects;
 
+  // Initialize to empty list.
   hittable_list() {}
+
+  // Initialize with single object.
   hittable_list(shared_ptr<hittable> object) { add(object); }
 
   void clear() { objects.clear(); }
@@ -28,6 +31,7 @@ public:
     bool hit_anything = false;
     auto closest_so_far = ray_tmax;
 
+    // Find the hit with the smallest 't'.
     for (const auto& object : objects) {
       if (object->hit(r, ray_tmin, closest_so_far, temp_rec)) {
         hit_anything = true;
