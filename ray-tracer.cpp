@@ -4,7 +4,7 @@
 
 /**
 
- left off at -> 6.5
+ left off at -> 7
  https://raytracing.github.io/books/RayTracingInOneWeekend.html
 
 */
@@ -14,6 +14,7 @@
 #include "color.h"
 #include "hittable.h"
 #include "hittable_list.h"
+#include "interval.h"
 #include "sphere.h"
 
 #include <iostream>
@@ -22,7 +23,7 @@ color
 ray_color(const ray& r, const hittable& world)
 {
   hit_record rec;
-  if (world.hit(r, 0, infinity, rec)) {
+  if (world.hit(r, interval(0, infinity), rec)) {
     return 0.5 * (rec.normal + color(1, 1, 1));
   }
 
@@ -45,7 +46,7 @@ main()
   // World
   hittable_list world;
 
-  world.add(make_shared<sphere>(point3(0, 0, -1), 0.25));
+  world.add(make_shared<sphere>(point3(0, 0, -1), 0.5));
   world.add(make_shared<sphere>(point3(0, -100.5, -1), 100));
 
   // Camera
